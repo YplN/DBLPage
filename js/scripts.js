@@ -269,7 +269,7 @@ function initCytoscape(cy, G) {
     cy.on('click', 'node', function(e) {
         var sel = e.target;
         if (sel.classes().includes("author_node")) {
-            console.log(G.Authors.get(this.id()));
+            // console.log(G.Authors.get(this.id()));
             list.innerHTML = "";
             cy.elements().remove();
             createCytoscape(G.Authors.get(this.id()).pid);
