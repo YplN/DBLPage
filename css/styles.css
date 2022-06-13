@@ -1,5 +1,9 @@
 #cy {
-    width: 700px;
+    width: 500px;
     height: 500px;
     display: block;
+}
+
+#main_content {
+    display: flex;
 }

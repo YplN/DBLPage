@@ -7,14 +7,10 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>DBLPage</title>
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-
     <script src="https://cdnjs.cloudflare.com/ajax/libs/cytoscape/3.21.1/cytoscape.min.js" integrity="sha512-H44mkyNG9R5Y8NDjFoZ0lnMGgxfsbfbuewUNJJjecVOUzR3n/JL8+UFc07pP74T5tA+aGOMKCwazdDYwoquE8g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-
-
-    <!-- <script src="http://cdnjs.cloudflare.com/ajax/libs/qtip2/2.2.0/jquery.qtip.js"></script> -->
 
 </head>
 
@@ -22,12 +18,21 @@
 
 </body>
 
-<div id="cy"></div>
+<div id="pidDIV">
+    <input type="text" id="pid" title="Enter PID here" placeholder="Enter your PID here">
+    <div id="submitPID">Submit</div>
+</div>
 
-<ol id="list">
-</ol>
+<div id="main_content">
+    <div id="cy"></div>
+    <div>
+        <ul id="list">
+        </ul>
+    </div>
+</div>
 
 <script src="js/graph.js"></script>
+<script src="js/dblp_parser.js"></script>
 <script src="js/scripts.js"></script>
 
 </html>

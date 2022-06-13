@@ -1,0 +1,91 @@
+[{
+        "selector": "node",
+        "style": {
+            "background-color": "#666",
+            "label": "data(label)"
+        }
+    },
+    {
+        "selector": "edge",
+        "style": {
+            "width": 2,
+            "line-color": "#aaa",
+            "target-arrow-color": "#aaa",
+            "target-arrow-shape": "triangle",
+            "curve-style": "bezier"
+        }
+    },
+
+    {
+        "selector": ".author_node",
+        "style": {
+            "background-color": "white",
+            "color": "black",
+            "text-valign": "center",
+            "text-halign": "center",
+            "border-color": "black",
+            "border-width": "1px"
+        }
+    },
+
+    {
+        "selector": ".inproceedings",
+        "style": {
+            "background-color": "#196ca3"
+        }
+    },
+    {
+        "selector": ".article",
+        "style": {
+            "background-color": "#c32b72"
+        }
+    },
+    {
+        "selector": ".arxiv",
+        "style": {
+            "background-color": "#606b70"
+        }
+    },
+    {
+        "selector": ".phdthesis",
+        "style": {
+            "background-color": "#f8c91f"
+        }
+    },
+    {
+        "selector": ".publi",
+        "style": {
+            "shape": "square",
+            "width": "25px",
+            "height": "25px"
+        }
+    },
+    {
+        "selector": ".collab_edge",
+        "style": {
+            "width": "data(weight)",
+            "line-color": "#ddd",
+            "target-arrow-shape": "none",
+            "curve-style": "bezier"
+        }
+    },
+    {
+        "selector": "node.highlight",
+        "style": {
+            "border-color": "#000",
+            "border-width": "2px"
+        }
+    },
+    {
+        "selector": "node.semitransp",
+        "style": { "opacity": "0.5" }
+    },
+    {
+        "selector": "edge.highlight",
+        "style": { "mid-target-arrow-color": "#FFF" }
+    },
+    {
+        "selector": "edge.semitransp",
+        "style": { "opacity": "0.2" }
+    }
+]
