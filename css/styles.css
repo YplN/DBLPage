@@ -7,3 +7,9 @@
 #main_content {
     display: flex;
 }
+
+#name {
+    font-size: 20px;
+    text-align: center;
+    font-family: Arial, Helvetica, sans-serif;
+}

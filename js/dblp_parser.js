@@ -20,6 +20,10 @@ function getTitleFromPublication(pub) {
     return pub.firstChild.getElementsByTagName("title")[0].innerHTML;
 }
 
+function getNamePid(xml) {
+    return xml.getElementsByTagName("dblpperson")[0].getElementsByTagName("person")[0].getElementsByTagName("author")[0].innerHTML;
+}
+
 function getListAuthorsFromPublication(pub) {
     return pub.firstChild.getElementsByTagName("author");
 }

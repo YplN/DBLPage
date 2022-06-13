@@ -59,6 +59,7 @@ class Graph {
         this.Publications = new Map();
         this.Collabs = [];
 
+        this.name = getNamePid(xml);
 
         const r_list = getListPublications(xml);
 
