@@ -15,7 +15,6 @@ function loadData() {
 
 function createCytoscape(pid) {
     const url = getDBLPUrl(pid) + ".xml";
-    console.log(url);
     fetch(url)
         .then(response => response.text())
         .then(data => {
@@ -23,10 +22,22 @@ function createCytoscape(pid) {
             const xml = parser.parseFromString(data, "application/xml");
             const G = new Graph(xml);
             nameDOM.innerHTML = G.name;
+
+
+            document.getElementById("co_authors_container").innerHTML="";
+            for(const co_pid of G.Authors.keys()){
+                if(co_pid != pid){
+                    G.createAuthorDOM(co_pid);
+                }
+            }
+
+            document.getElementById("list").innerHTML="";
+            for(const keypub of G.Publications.keys()){
+                G.createPubliDOM(keypub);
+            }
+
             let cy = setupCytogen();
-
             initCytoscape(cy, G);
-
             var layout = cy.elements().layout(cose_options);
             layout.run();
 

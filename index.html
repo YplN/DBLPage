@@ -6,38 +6,63 @@
     <link href="css/styles.css" rel="stylesheet" type="text/css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Joan&display=swap" rel="stylesheet">
+
+
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>DBLPage</title>
 
+
+
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/cytoscape/3.21.1/cytoscape.min.js" integrity="sha512-H44mkyNG9R5Y8NDjFoZ0lnMGgxfsbfbuewUNJJjecVOUzR3n/JL8+UFc07pP74T5tA+aGOMKCwazdDYwoquE8g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/cytoscape/3.21.1/cytoscape.min.js"
+        integrity="sha512-H44mkyNG9R5Y8NDjFoZ0lnMGgxfsbfbuewUNJJjecVOUzR3n/JL8+UFc07pP74T5tA+aGOMKCwazdDYwoquE8g=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 
 </head>
 
 <body>
 
+    <div id="body_container">
+        <div id="pidDIV">
+            <div class="arrow-left"></div>
+            <input type="text" id="pid" title="Enter PID here" placeholder="Enter your PID here" value="227/4719">
+            <span id="submitPID">Submit</span>
+        </div>
+
+        <div id="main_content">
+            <fieldset class="field_row" id="fieldco">
+                <legend>Co-Authors List</legend>
+                <div id="co_authors_container"></div>
+            </fieldset>
+
+            <fieldset class="field_row">
+                <legend id="name"></legend>
+                <div id="graph_container">
+                    <div id="cy"></div>
+                </div>
+            </fieldset>
+
+            <div id="information_container" class="field_row">
+                <fieldset>
+                    <legend>Statistics</legend>
+                    <div id="data_user_container"></div>
+                </fieldset>
+                <fieldset>
+                    <legend>List of Publications</legend>
+                    <div id="list_publications_container">
+                        <ul id="list">
+                        </ul>
+                    </div>
+                </fieldset>
+            </div>
+        </div>
+    </div>
+
+    <script src="js/graph.js"></script>
+    <script src="js/dblp_parser.js"></script>
+    <script src="js/scripts.js"></script>
+
 </body>
-
-
-<div id="pidDIV">
-    <input type="text" id="pid" title="Enter PID here" placeholder="Enter your PID here">
-    <div id="submitPID">Submit</div>
-</div>
-
-<div id="main_content">
-    <div>
-        <div id="name"></div>
-        <div id="cy"></div>
-    </div>
-
-    <div>
-        <ul id="list">
-        </ul>
-    </div>
-</div>
-
-<script src="js/graph.js"></script>
-<script src="js/dblp_parser.js"></script>
-<script src="js/scripts.js"></script>
 
 </html>
