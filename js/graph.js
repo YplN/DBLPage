@@ -97,12 +97,13 @@ class Graph {
         if (this.Publications.has(keyPub)) {
             const publication = this.Publications.get(keyPub);
 
-            const liElem = document.createElement('li');
+            const liElem = document.createElement('div');
+            liElem.classList.add("publi")
             const liPubli = list.appendChild(liElem);
             liPubli.innerHTML = "[" + publication.year + "] " + `<a href="` + publication.url + `">` + publication.title + "</a> ";
 
-            const listAuthorsElem = document.createElement("ul");
-            const listAuthors = liPubli.appendChild(listAuthorsElem);
+            // const listAuthorsElem = document.createElement("ul");
+            // const listAuthors = liPubli.appendChild(listAuthorsElem);
 
             // for (const pid of publication.pids) {
             //     const a = this.Authors.get(pid);
@@ -119,10 +120,11 @@ class Graph {
     createAuthorDOM(pid){
         if (this.Authors.has(pid)){
             const author = this.Authors.get(pid);
-            const authorDOM = document.createElement('div');
+            const authorDOM = document.createElement('a');
+            authorDOM.href = author.url;
             authorDOM.classList.add("co_author_div");
             document.getElementById('co_authors_container').appendChild(authorDOM);
-            authorDOM.innerHTML = `<a href="${author.url}"><div class="co_author_shortname">${author.shortName.substr(0,2)}</div> <span class="co_author_name">${author.name}</span></a>`;
+            authorDOM.innerHTML = `<div> <div class="co_author_shortname">${author.shortName.substr(0,2)}</div> <span class="co_author_name">${author.name}</span></div>`;
         }
     }
 

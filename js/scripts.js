@@ -1,6 +1,6 @@
 let url = getDBLPUrl(myPID) + ".xml";
 
-const list = document.getElementById("list");
+const list = document.getElementById("list_publications_container");
 const nameDOM = document.getElementById("name");
 const submitDOM = document.getElementById("submitPID");
 const pidDOM = document.getElementById("pid");
@@ -31,7 +31,7 @@ function createCytoscape(pid) {
                 }
             }
 
-            document.getElementById("list").innerHTML="";
+            document.getElementById("list_publications_container").innerHTML="";
             for(const keypub of G.Publications.keys()){
                 G.createPubliDOM(keypub);
             }
@@ -238,9 +238,9 @@ function initCytoscape(cy, G) {
                 .union(sel.incomers())
                 .addClass('highlight');
 
-            list.innerHTML = "";
-            const dom = G.createPubliDOM(this.id());
-            list.appendChild(dom)
+            // list.innerHTML = "";
+            // const dom = G.createPubliDOM(this.id());
+            // list.appendChild(dom)
 
         } else if (sel.classes().includes("author_node")) {
             sel.addClass('highlight')
@@ -285,6 +285,23 @@ function initCytoscape(cy, G) {
             cy.elements().remove();
             createCytoscape(G.Authors.get(this.id()).pid);
 
+        }
+        else if (sel.classes().includes("publi")) {
+            list.innerHTML = "";
+            const dom = G.createPubliDOM(this.id());
+            list.appendChild(dom);
+        }
+
+    })
+
+    cy.on('click', function(e) {
+        var evtTarget = e.target;
+        if( evtTarget === cy ){
+            list.innerHTML = "";
+            document.getElementById("list_publications_container").innerHTML="";
+            for(const keypub of G.Publications.keys()){
+                G.createPubliDOM(keypub);
+            }
         }
     })
 }
