@@ -55,7 +55,8 @@ function setupCytogen() {
                 selector: 'node',
                 style: {
                     'background-color': '#666',
-                    'label': 'data(label)'
+                    'label': 'data(label)',
+                    'font-family': 'serif'
                 }
             },
 

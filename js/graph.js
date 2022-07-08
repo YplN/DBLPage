@@ -100,7 +100,7 @@ class Graph {
             const liElem = document.createElement('div');
             liElem.classList.add("publi")
             const liPubli = list.appendChild(liElem);
-            liPubli.innerHTML = "[" + publication.year + "] " + `<a href="` + publication.url + `">` + publication.title + "</a> ";
+            liPubli.innerHTML = `<span class="year_publi">` + publication.year + "</span>" + `<a href="` + publication.url + `">` + publication.title + "</a> ";
 
             // const listAuthorsElem = document.createElement("ul");
             // const listAuthors = liPubli.appendChild(listAuthorsElem);
